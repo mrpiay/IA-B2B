@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>BD · ISBE</title>
+<title>IA B2B</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap');
 *{box-sizing:border-box;margin:0;padding:0}
@@ -172,8 +172,8 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
 
   <div class="page-header">
     <div class="page-name">Javier Piay</div>
-    <div class="page-role">Candidato a Business Development Lead · ISBE</div>
-    <div class="page-sub">Demostración de conocimiento del ecosistema, capacidad operativa y uso de IA para acelerar el pipeline comercial</div>
+    <div class="page-role">Desarrollo de negocio · IA aplicada al pipeline B2B</div>
+    <div class="page-sub">Demostración práctica de cómo se integran Claude, servidores MCP y agentes autónomos en el ciclo comercial completo — del ICP al cierre. El caso está trabajado sobre Blockchain; el mismo modelo se adapta a cualquier vertical.</div>
   </div>
 
   <div class="nav">
@@ -198,7 +198,7 @@ body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);min-h
         <div class="demo-title" id="demo-title">Selecciona un caso de uso</div>
       </div>
       <div class="demo-msgs" id="demo-msgs">
-        <div class="dmsg dmsg-sys">Selecciona un caso de uso para ver el problema que resuelve ISBE, el pitch comercial y cómo desarrollaría el pipeline. El chat de abajo simula cómo usaría un asistente con IA durante la preparación de una reunión: para anticipar objeciones, adaptar el discurso al interlocutor (CIO, CFO, Legal) o consultar la regulación relevante antes de hablar con un cliente.</div>
+        <div class="dmsg dmsg-sys">Selecciona un caso de uso para ver cómo se aborda el pipeline en una vertical concreta. El chat de abajo simula cómo se usa un asistente con IA durante la preparación de una reunión: para anticipar objeciones, adaptar el discurso al interlocutor (CIO, CFO, Legal) o consultar la regulación relevante antes de hablar con un cliente.</div>
       </div>
       <div class="q-chips" id="q-chips"></div>
       <div class="demo-input-row">
@@ -215,14 +215,14 @@ const PHASES=[
     num:"01",label:"ICP y\ncuentas",color:"#185FA5",
     badge:"Research",badgeBg:"#E6F1FB",badgeCol:"#185FA5",
     title:"Definición del perfil de cliente ideal y construcción de la lista de cuentas target",
-    sub:"Antes de contactar a nadie, defino con precisión qué tipo de empresa tiene más probabilidades de necesitar ISBE: sector regulado, operaciones en varios países de la UE, presión de cumplimiento normativo activa y capacidad técnica para integrar una red DLT. Sin ese filtro previo, el outreach pierde tiempo en cuentas que nunca van a cerrar.",
+    sub:"Antes de contactar a nadie, se define con precisión qué tipo de empresa tiene más probabilidades de necesitar ISBE: sector regulado, operaciones en varios países de la UE, presión de cumplimiento normativo activa y capacidad técnica para integrar una red DLT. Sin ese filtro previo, el outreach pierde tiempo en cuentas que nunca van a cerrar.",
     tools:[
       {chip:"Brave Search MCP",type:"mcp",desc:"Claude busca en tiempo real noticias recientes de cada cuenta objetivo e identifica señales de interés: menciones a DLT, proyectos de digitalización, presión regulatoria activa o contrataciones en el área de innovación. El resultado alimenta el scoring de fit sin búsqueda manual."},
       {chip:"Filesystem MCP",type:"mcp",desc:"Claude lee el template de scoring desde la carpeta local bd-isbe y lo rellena con los datos de la cuenta investigada, generando una ficha estructurada lista para importar como nota del Company en HubSpot."},
-      {chip:"LinkedIn Sales Navigator",type:"manual",desc:"Filtro manual por sector, tamaño de empresa (más de 200 empleados), país y señales de actividad reciente. Guardo las cuentas en listas segmentadas por vertical para lanzar secuencias específicas a cada una."},
+      {chip:"LinkedIn Sales Navigator",type:"manual",desc:"Filtrado manual por sector, tamaño de empresa (más de 200 empleados), país y señales de actividad reciente. Las cuentas se guardan en listas segmentadas por vertical para lanzar secuencias específicas a cada una."},
       {chip:"Apollo.io",type:"manual",desc:"Enriquecimiento manual del registro con email verificado, número directo y datos adicionales (financiación, tecnologías, tamaño del equipo técnico). Reduce las horas de búsqueda por cuenta antes de iniciar el outreach."},
     ],
-    storage:"Para cada cuenta cualificada creo un registro de Company en HubSpot con propiedades custom: 'Caso de uso potencial', 'Sector', 'Stakeholders identificados' y 'Score de fit ISBE' del 1 al 5. Estos campos permiten filtrar el pipeline por segmento y priorizar cuentas para las campañas ABM.",
+    storage:"Para cada cuenta cualificada se crea un registro de Company en HubSpot con propiedades custom: 'Caso de uso potencial', 'Sector', 'Stakeholders identificados' y 'Score de fit ISBE' del 1 al 5. Estos campos permiten filtrar el pipeline por segmento y priorizar cuentas para las campañas ABM.",
     storageRef:"HubSpot CRM → Companies con propiedades custom + vistas de pipeline segmentadas por vertical",
     flow:["Brave Search MCP","→","Filesystem MCP scoring","→","LinkedIn cualifica","→","Apollo enriquece","→","Company en HubSpot"],
     ai:[
@@ -302,7 +302,7 @@ const PHASES=[
     num:"04",label:"Propuesta\ncomercial",color:"#854F0B",
     badge:"Propuesta",badgeBg:"#FAEEDA",badgeCol:"#854F0B",
     title:"Propuesta comercial adaptada al decisor, al sector y al caso de uso concreto",
-    sub:"No existe una propuesta estándar de ISBE que sirva para todos. A un CIO le hablo de soberanía de datos y tiempo de integración; a un CFO, de reducción del coste de auditoría y riesgo regulatorio evitado. El deck, los ejemplos y el business case cambian por sector y por interlocutor.",
+    sub:"No existe una propuesta estándar de ISBE que sirva para todos. A un CIO se le habla de soberanía de datos y tiempo de integración; a un CFO, de reducción del coste de auditoría y riesgo regulatorio evitado. El deck, los ejemplos y el business case cambian por sector y por interlocutor.",
     tools:[
       {chip:"Notion MCP",type:"mcp",desc:"Claude lee el template de propuesta del vertical correspondiente en Notion y recupera las últimas propuestas del mismo sector con su resultado, para contextualizar la nueva con lo que ha funcionado antes en deals similares."},
       {chip:"Google Drive MCP",type:"mcp",desc:"Claude crea un Google Doc con el borrador completo de la propuesta adaptada al caso de uso concreto, incluyendo el business case y el executive summary en inglés si se requiere, listo para convertir en presentación."},
@@ -594,7 +594,7 @@ function renderCases(){
           <div class="case-stext">${c.pitch}</div>
         </div>
         <div class="case-section">
-          <div class="case-stitle">Cómo desarrollo este pipeline</div>
+          <div class="case-stitle">Cómo se desarrolla este pipeline</div>
           <ul class="case-steps">${c.steps.map(s=>`<li>${s}</li>`).join("")}</ul>
         </div>
         <div class="case-section">
@@ -610,7 +610,7 @@ function selectCase(id){
   const c=CASES.find(x=>x.id===id);
   document.getElementById("demo-dot").style.background=c.color;
   document.getElementById("demo-title").textContent=c.name;
-  document.getElementById("demo-msgs").innerHTML=`<div class="dmsg dmsg-sys">Haz clic en una de las preguntas para ver cómo respondería en una conversación de preparación antes de una reunión con este tipo de cliente.</div>`;
+  document.getElementById("demo-msgs").innerHTML=`<div class="dmsg dmsg-sys">Haz clic en una de las preguntas para ver cómo se respondería en una conversación de preparación antes de una reunión con este tipo de cliente.</div>`;
   document.getElementById("q-chips").innerHTML=c.qs.map((item,i)=>`<span class="qchip" onclick="showDemoResponse('${id}',${i})">${item.q}</span>`).join("");
 }
 
@@ -663,43 +663,43 @@ const MCP_SERVERS=[
     color:"#993C1D",bg:"#FAECE7",border:"rgba(153,60,29,0.2)",
     what:"Servidor MCP oficial de HubSpot que expone las APIs de CRM como herramientas de Claude. Permite crear y actualizar Deals, Contacts y Companies, añadir notas, avanzar etapas del pipeline y consultar el forecast, todo desde una conversación en Claude Desktop sin abrir el CRM.",
     tools:["Crear o actualizar un Deal con sus propiedades (valor, etapa, fecha de cierre)","Añadir una nota estructurada a un contacto o deal con el resumen de una reunión","Listar los deals en una etapa concreta o filtrar por propietario y fecha","Crear tareas de seguimiento vinculadas a un contacto con fecha de vencimiento","Consultar el pipeline completo y el forecast de cierre del mes"],
-    example:"Después de una discovery call, le digo a Claude: 'Actualiza el deal de CaixaBank Tech a etapa Discovery completado, añade esta nota con el resumen de la llamada y crea una tarea para enviar la propuesta antes del viernes.' Ejecuta las tres acciones en HubSpot sin que yo abra el navegador."
+    example:"Después de una discovery call, se le pide a Claude: 'Actualiza el deal de CaixaBank Tech a etapa Discovery completado, añade esta nota con el resumen de la llamada y crea una tarea para enviar la propuesta antes del viernes.' Ejecuta las tres acciones en HubSpot sin necesidad de abrir el navegador."
   },
   {
     id:"notion",
     name:"Notion MCP",
     install:"npx @notionhq/notion-mcp-server",
     color:"#1a1a18",bg:"#f4f3ef",border:"rgba(26,26,24,0.15)",
-    what:"Servidor MCP oficial de Notion que permite leer y escribir en bases de datos y páginas. En el contexto de BD, lo uso para consultar el partner playbook, actualizar plantillas de propuestas por vertical y registrar aprendizajes después de cada deal cerrado o perdido.",
+    what:"Servidor MCP oficial de Notion que permite leer y escribir en bases de datos y páginas. En el contexto de BD, se usa para consultar el partner playbook, actualizar plantillas de propuestas por vertical y registrar aprendizajes después de cada deal cerrado o perdido.",
     tools:["Leer la página de partner playbook de un vertical concreto antes de una reunión","Crear una entrada nueva en la base de datos de propuestas con el resultado del deal","Buscar en el repositorio de propuestas anteriores del mismo sector","Actualizar la página de un partner con el estado actual de la relación comercial","Añadir una entrada al log de objeciones frecuentes con la respuesta que funcionó"],
-    example:"Antes de una reunión con una consultora de transformación digital, le digo a Claude: 'Dame el partner playbook para consultoras y las últimas tres propuestas que hicimos para empresas de ese sector.' Recibe el contexto sin buscar manualmente en Notion."
+    example:"Antes de una reunión con una consultora de transformación digital, se le pide a Claude: 'Dame el partner playbook para consultoras y las últimas tres propuestas hechas para empresas de ese sector.' Llega el contexto sin búsqueda manual en Notion."
   },
   {
     id:"gdrive",
     name:"Google Drive MCP",
     install:"npx @google/drive-mcp-server",
     color:"#185FA5",bg:"#E6F1FB",border:"rgba(24,95,165,0.2)",
-    what:"Servidor MCP que conecta con Google Drive y Google Docs. Lo uso principalmente para acceder a grabaciones de llamadas transcritas, propuestas en formato Slides o Docs, y para crear nuevos documentos directamente desde Claude sin cambiar de herramienta.",
+    what:"Servidor MCP que conecta con Google Drive y Google Docs. Se usa principalmente para acceder a grabaciones de llamadas transcritas, propuestas en formato Slides o Docs, y para crear nuevos documentos directamente desde Claude sin cambiar de herramienta.",
     tools:["Buscar y leer la transcripción de una llamada almacenada en Drive","Crear un nuevo Google Doc con el borrador de una propuesta generada por Claude","Leer el contenido de un deck de propuesta existente para adaptarlo a otra cuenta","Buscar en Drive archivos relacionados con una empresa o contacto concreto","Crear una carpeta de cuenta nueva con la estructura estándar de documentos"],
-    example:"Tras terminar la transcripción de una discovery con Correos Digital, le digo a Claude: 'Lee la transcripción de la reunión de hoy en Drive, extrae los puntos clave y crea un Google Doc con el borrador de la propuesta usando el template de logística.' Lo hace sin que yo copie ni pegue nada."
+    example:"Tras terminar la transcripción de una discovery con Correos Digital, se le pide a Claude: 'Lee la transcripción de la reunión de hoy en Drive, extrae los puntos clave y crea un Google Doc con el borrador de la propuesta usando el template de logística.' Lo ejecuta sin necesidad de copiar ni pegar nada."
   },
   {
     id:"brave",
     name:"Brave Search MCP",
     install:"npx @modelcontextprotocol/server-brave-search",
     color:"#534AB7",bg:"#EEEDFE",border:"rgba(83,74,183,0.2)",
-    what:"Servidor MCP que usa la API de Brave Search para hacer búsquedas web en tiempo real desde Claude. En el proceso de research de cuentas, lo uso para obtener noticias recientes de una empresa, buscar a sus decisores o identificar si han tenido actividad pública relacionada con digitalización, DLT o cumplimiento normativo.",
+    what:"Servidor MCP que usa la API de Brave Search para hacer búsquedas web en tiempo real desde Claude. En el proceso de research de cuentas, se usa para obtener noticias recientes de una empresa, buscar a sus decisores o identificar si han tenido actividad pública relacionada con digitalización, DLT o cumplimiento normativo.",
     tools:["Buscar noticias recientes de una empresa objetivo y extraer señales de interés","Encontrar artículos o declaraciones públicas de un decisor concreto antes de contactarle","Investigar si una empresa ha anunciado proyectos de transformación digital o blockchain","Buscar los eventos recientes del sector en los que ha participado una cuenta objetivo","Identificar qué regulaciones están afectando activamente a un sector en este momento"],
-    example:"Antes de escribir el email de primer contacto a Iberdrola, le digo a Claude: 'Busca noticias de los últimos 3 meses de Iberdrola relacionadas con digitalización, CSRD o trazabilidad de emisiones.' Recibo el contexto para personalizar el mensaje en segundos."
+    example:"Antes de escribir el email de primer contacto a Iberdrola, se le pide a Claude: 'Busca noticias de los últimos 3 meses de Iberdrola relacionadas con digitalización, CSRD o trazabilidad de emisiones.' Llega el contexto para personalizar el mensaje en segundos."
   },
   {
     id:"filesystem",
     name:"Filesystem MCP",
     install:"npx @modelcontextprotocol/server-filesystem",
     color:"#0F6E56",bg:"#E1F5EE",border:"rgba(15,110,86,0.2)",
-    what:"Servidor MCP local que da a Claude acceso de lectura y escritura a una carpeta del sistema de archivos. Lo uso para mantener un directorio local con templates de emails por vertical, scripts de discovery, plantillas de propuesta y el log personal de aprendizajes, todo accesible desde Claude sin subir nada a la nube.",
+    what:"Servidor MCP local que da a Claude acceso de lectura y escritura a una carpeta del sistema de archivos. Se usa para mantener un directorio local con templates de emails por vertical, scripts de discovery, plantillas de propuesta y el log de aprendizajes, todo accesible desde Claude sin subir nada a la nube.",
     tools:["Leer el template de email ABM del sector energético para personalizar el mensaje","Guardar el resumen de una reunión como archivo Markdown en la carpeta de la cuenta","Leer el script de discovery actualizado antes de una llamada de cualificación","Guardar un nuevo aprendizaje en el log de objeciones con la respuesta que funcionó","Acceder a la plantilla de propuesta por vertical y generar una versión adaptada"],
-    example:"Al preparar la llamada de cierre con Agencia Tributaria, le digo a Claude: 'Lee el script de cierre de la carpeta templates y el resumen de las últimas tres reuniones con esta cuenta.' Llega a la llamada con el contexto completo sin buscar en carpetas."
+    example:"Al preparar la llamada de cierre con Agencia Tributaria, se le pide a Claude: 'Lee el script de cierre de la carpeta templates y el resumen de las últimas tres reuniones con esta cuenta.' La llamada arranca con el contexto completo sin búsqueda en carpetas."
   },
 ];
 
@@ -725,7 +725,7 @@ function renderMcpDetail(){
         <span class="mcp-tag" style="background:${s.bg};color:${s.color};border-color:${s.border}">Servidor local</span>
       </div>
       <div class="mcp-section">
-        <div class="mcp-section-hd">Qué hace y por qué lo uso en BD</div>
+        <div class="mcp-section-hd">Qué hace y por qué se usa en BD</div>
         <div class="mcp-section-text">${s.what}</div>
       </div>
       <div class="mcp-section" style="border-top:1px solid var(--border)">
@@ -806,8 +806,8 @@ document.addEventListener('DOMContentLoaded',()=>{renderMcpNav();renderMcpDetail
 
 <div id="mcp" class="view" style="padding:0 2rem 2rem">
   <div class="mcp-intro">
-    <div class="mcp-intro-title">MCP local para el pipeline de BD — qué es y por qué lo uso</div>
-    <div class="mcp-intro-text">MCP (Model Context Protocol) es el protocolo abierto de Anthropic que permite conectar Claude con herramientas externas: CRM, sistemas de archivos, buscadores, bases de datos. Un servidor MCP es un proceso ligero que corre en local y expone un conjunto de herramientas que Claude puede invocar directamente durante una conversación. En el contexto de BD, esto significa que en lugar de abrir HubSpot, buscar el deal, copiar el contexto, ir a Claude, escribir el prompt y volver a HubSpot a pegar el resultado, todo ese flujo ocurre en una sola conversación. Los servidores que uso son todos públicos, con instalación por npx en menos de 5 minutos cada uno.</div>
+    <div class="mcp-intro-title">MCP local para el pipeline de BD — qué es y por qué se usa</div>
+    <div class="mcp-intro-text">MCP (Model Context Protocol) es el protocolo abierto de Anthropic que permite conectar Claude con herramientas externas: CRM, sistemas de archivos, buscadores, bases de datos. Un servidor MCP es un proceso ligero que corre en local y expone un conjunto de herramientas que Claude puede invocar directamente durante una conversación. En el contexto de BD, esto significa que en lugar de abrir HubSpot, buscar el deal, copiar el contexto, ir a Claude, escribir el prompt y volver a HubSpot a pegar el resultado, todo ese flujo ocurre en una sola conversación. Los servidores utilizados son todos públicos, con instalación por npx en menos de 5 minutos cada uno.</div>
   </div>
 
   <div class="mcp-arch">
@@ -887,7 +887,7 @@ document.addEventListener('DOMContentLoaded',()=>{renderMcpNav();renderMcpDetail
       <div class="mul-intro-text">
         <div class="mul-tag">Open source · 5k stars · multica.ai</div>
         <div class="mul-title">De workflow reactivo a equipo autónomo</div>
-        <div class="mul-sub">Con la arquitectura MCP construida hasta aquí, Claude responde cuando le pregunto. Multica añade la capa de orquestación: defino tareas de BD, las asigno a agentes igual que a un compañero de equipo, y ellos ejecutan de forma autónoma usando los mismos servidores MCP. El BD humano pasa de ejecutar a revisar y aprobar.</div>
+        <div class="mul-sub">Con la arquitectura MCP construida hasta aquí, Claude responde cuando se le pregunta. Multica añade la capa de orquestación: se definen tareas de BD, se asignan a agentes igual que a un compañero de equipo, y ellos ejecutan de forma autónoma usando los mismos servidores MCP. El BD humano pasa de ejecutar a revisar y aprobar.</div>
       </div>
       <div class="mul-stack-pill">
         <div class="mul-stack-row">
@@ -1000,24 +1000,24 @@ document.addEventListener('DOMContentLoaded',()=>{renderMcpNav();renderMcpDetail
       <div class="mul-col">
         <div class="mul-col-hd mul-col-before">Antes — workflow reactivo</div>
         <div class="mul-flow-list">
-          <div class="mul-flow-item">Abro Claude Desktop y escribo el prompt de research</div>
-          <div class="mul-flow-item">Copio el resultado y lo pego en HubSpot manualmente</div>
-          <div class="mul-flow-item">Abro la plantilla, la adapto, la envío por separado</div>
-          <div class="mul-flow-item">Después de la discovery, transcribo y resumo yo</div>
-          <div class="mul-flow-item">Actualizo el deal en HubSpot campo por campo</div>
-          <div class="mul-flow-item">Repito el proceso para cada cuenta, cada fase</div>
+          <div class="mul-flow-item">Se abre Claude Desktop y se escribe el prompt de research</div>
+          <div class="mul-flow-item">El resultado se copia y se pega en HubSpot manualmente</div>
+          <div class="mul-flow-item">Se abre la plantilla, se adapta y se envía por separado</div>
+          <div class="mul-flow-item">Tras la discovery, transcripción y resumen manuales</div>
+          <div class="mul-flow-item">Se actualiza el deal en HubSpot campo por campo</div>
+          <div class="mul-flow-item">El proceso se repite para cada cuenta, cada fase</div>
         </div>
       </div>
       <div class="mul-divider"></div>
       <div class="mul-col">
         <div class="mul-col-hd mul-col-after">Con Multica — workflow autónomo</div>
         <div class="mul-flow-list">
-          <div class="mul-flow-item mul-flow-highlight">Asigno "Investiga 15 cuentas logísticas bajo EUDR" al agente</div>
+          <div class="mul-flow-item mul-flow-highlight">Se asigna "Investiga 15 cuentas logísticas bajo EUDR" al agente</div>
           <div class="mul-flow-item mul-flow-highlight">El agente ejecuta research_account × 15 en background</div>
-          <div class="mul-flow-item mul-flow-highlight">Aparezco con 15 Companies en HubSpot scored y emails redactados</div>
-          <div class="mul-flow-item mul-flow-highlight">Tras la discovery: subo la grabación, asigno process_discovery</div>
+          <div class="mul-flow-item mul-flow-highlight">Aparecen 15 Companies en HubSpot ya scored y los emails redactados</div>
+          <div class="mul-flow-item mul-flow-highlight">Tras la discovery: se sube la grabación y se asigna process_discovery</div>
           <div class="mul-flow-item mul-flow-highlight">El Deal se actualiza solo con stakeholder map y próximos pasos</div>
-          <div class="mul-flow-item mul-flow-highlight">Me concentro en las llamadas y el cierre — no en el CRM</div>
+          <div class="mul-flow-item mul-flow-highlight">El BD se concentra en las llamadas y el cierre — no en el CRM</div>
         </div>
       </div>
     </div>
